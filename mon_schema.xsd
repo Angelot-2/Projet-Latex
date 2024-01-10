@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="bibliography">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="article" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="ebooks" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="phdthesis" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="inproceedings" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="misc" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="article">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="author" type="xs:string"/>
+        <xs:element name="journal" type="xs:string"/>
+        <xs:element name="volume" type="xs:integer"/>
+        <xs:element name="pages" type="xs:integer"/>
+        <xs:element name="year" type="xs:integer"/>
+        <xs:element name="publisher" type="xs:string"/>
+      </xs:sequence>
+
+      <xs:attribute name="ebooks"/>
+       <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="author" type="xs:string"/>
+        <xs:element name="year" type="xs:integer"/>
+        <xs:element name="editor" type="xs:string"/>
+	     </xs:sequence>
+
+      <xs:attribute name="phdthesis"/>
+	     <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="author" type="xs:string"/>
+        <xs:element name="year" type="xs:integer"/>
+        <xs:element name="school" type="xs:string"/>
+	     </xs:sequence>
+
+      <xs:attribute name="inproceedings"/>
+       <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="author" type="xs:string"/>
+        <xs:element name="volume" type="xs:integer"/>
+        <xs:element name="pages" type="xs:integer"/>
+        <xs:element name="year" type="xs:integer"/>
+        <xs:element name="organization" type="xs:string"/>
+       </xs:sequence>
+
+      <xs:attribute name="techreport"/>
+       <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="author" type="xs:string"/>
+        <xs:element name="year" type="xs:integer"/>
+       </xs:sequence>
+
+      <xs:attribute name="misc"/>
+       <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="author" type="xs:string"/>
+        <xs:element name="year" type="xs:integer"/>
+        <xs:element name="publisher" type="xs:string"/>
+       </xs:sequence>
+
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
